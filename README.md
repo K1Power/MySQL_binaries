@@ -5,7 +5,7 @@ Based on MySQL Community Source，build and verify  tarball/ RPM binaries for Po
 本仓库从社区下载MySQL主流源码版本，维护MySQL on Power上经过优化、验证的编译脚本， 并在Releases/Tags中提供编译好的二进制RPM或者TARBALL 软件包.
  
 # 示例
-* [scripts/src/5.7.28/GET_SOURCE.links.sh](https://github.com/DBres4Power/MySQL_binaries/blob/main/scripts/src/5.7.28/GET_SOURCE.links.sh) ，内容是从何处下载的MySQL 5.7.28源码
+* [scripts/src/5.7.28/GET_SOURCE.links.sh](https://github.com/DBres4Power/MySQL_binaries/blob/main/scripts/src/5.7.28/GET_SOURCE.links.sh) ，内容是下载MySQL 5.7.28源码的链接
  
 * [scripts/build_on_rhel7_by_devtoolset/5.7.28 README.BUILD.RPMS.txt](https://github.com/DBres4Power/MySQL_binaries/blob/main/scripts/build_on_rhel7_by_devtoolset/5.7.28/README.BUILD.RPMS.txt) 采用devtoolset gcc编译MySQL 5.7.28二进制RPM包的过程
 
