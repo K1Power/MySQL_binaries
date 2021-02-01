@@ -2,7 +2,7 @@
 Based on MySQL Community Source，build and verify  tarball/ RPM binaries for Power (Linux ppc64/ppc64le), release binaries for popular versions.
 
 # 说明
-本仓库从社区下载MySQL相对成熟、稳定的源码版本，维护MySQL on Power上经过优化、验证的编译脚本， 并通过Tags/Releases中提供编译好的二进制RPM或者TARBALL 软件包.
+本仓库从社区下载MySQL主流源码版本，维护MySQL on Power上经过优化、验证的编译脚本， 并通过Tags/Releases中提供编译好的二进制RPM或者TARBALL 软件包.
  
 # 示例
 * [scripts/src/5.7.28/GET_SOURCE.links.sh](https://github.com/DBres4Power/MySQL_binaries/blob/main/scripts/src/5.7.28/GET_SOURCE.links.sh) ，内容是从何处下载的MySQL 5.7.28源码
