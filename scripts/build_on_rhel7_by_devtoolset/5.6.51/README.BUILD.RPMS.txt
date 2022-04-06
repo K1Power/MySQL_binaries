@@ -29,7 +29,7 @@ gcc is /opt/rh/devtoolset-7/root/usr/bin/gcc
 gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 
 ### Default %{optflags} is not optimized.
-# rpm -Uvh mysql-community-5.6.51-1.el7.src.rpm
+# rpm -Uvh MySQL-5.6.51-1.el7.src.rpm
 # cd /root/rpmbuild/SPECS
 # rpmbuild -bb mysql.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' --define='runselftest 0' 2>&1 | tee build.log
 
