@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 7.6 (Kernel 4.14.0-115.8.1.el7a.ppc64le) with devtoolset-7.
+Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-9.
 
 ### 1. About Build ENV #########################################################################################
 
@@ -7,7 +7,7 @@ Architecture:          ppc64le
 Model name:            POWER9 (architected), altivec supported
 
 # uname -r
-4.14.0-115.8.1.el7a.ppc64le
+4.18.0-305.el8.ppc64le
 
 # uname -m
 ppc64le
@@ -16,7 +16,7 @@ ppc64le
 
 Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
-    openssl-devel lz4-devel libxml2-devel wget readline-devel gperf gcc-c++ \
+    openssl-devel lz4-devel libxml2-devel wget readline-devel \
     libevent libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad \
     rpm-build time perl-JSON perl-Env
 
@@ -29,8 +29,10 @@ gcc is /opt/rh/devtoolset-7/root/usr/bin/gcc
 gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 
 ### Default %{optflags} is not optimized.
-# rpm -Uvh MySQL-5.6.51-1.el7.src.rpm
+# rpm -Uvh mysql-community-5.7.31-1.el7.src.rpm
 # cd /root/rpmbuild/SPECS
-# rpmbuild -bb mysql.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' --define='runselftest 0' 2>&1 | tee build.log
+# rpmbuild -bb mysql.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' 2>&1 | tee build.log
+
+
 
 
