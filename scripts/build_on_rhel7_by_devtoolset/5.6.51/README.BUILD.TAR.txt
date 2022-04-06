@@ -15,10 +15,11 @@ ppc64le
 ### 2. Build mysql    ##########################################################################################
 
 Install dependencies
-# yum -y install zlib-devel bzip2-devel numactl-devel \
+# yum -y install zlib-devel bzip2-devel cmake \
     openssl-devel lz4-devel libxml2-devel wget readline-devel \
-    libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad \
-    install java-1.8.0-openjdk iotop dstat perf java-1.8.0-openjdk-devel nmon
+    libevent-devel libaio-devel bison libtirpc-devel \
+    java-1.8.0-openjdk java-1.8.0-openjdk-devel perf numad numactl-devel
+ 
 
 Install devtoolset-7
 # yum install devtoolset-7
@@ -28,9 +29,8 @@ gcc is /opt/rh/devtoolset-7/root/usr/bin/gcc
 # gcc --version 
 gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 
-# tar zxvf mysql-boost-5.6.51.tar.gz 
-# cd mysql-5.6.51
-# mkdir build;cd build;
+# tar zxvf tar zxf mysql-5.6.51.tar.gz
+# cd mysql-5.6.51; mkdir -p build;cd build;
 # cmake .. \
   -DBUILD_CONFIG=mysql_release \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -45,8 +45,8 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
   -DCMAKE_RANLIB=`which gcc-ranlib` \
   -DWITH_INNODB_MEMCACHED=ON \
   -DWITH_NUMA=ON \
-    2>&1 | tee config.log    
-
+    2>&1 | tee config.log
+ 
 # make -j 32 && make install 
 
 
