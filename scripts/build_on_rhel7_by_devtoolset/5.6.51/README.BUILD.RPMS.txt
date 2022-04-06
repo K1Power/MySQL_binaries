@@ -16,7 +16,7 @@ ppc64le
 
 Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
-    openssl-devel lz4-devel libxml2-devel wget readline-devel \
+    openssl-devel lz4-devel libxml2-devel wget readline-devel gperf gcc-c++ \
     libevent libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad \
     rpm-build time perl-JSON perl-Env
 
@@ -31,6 +31,6 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 ### Default %{optflags} is not optimized.
 # rpm -Uvh mysql-community-5.6.51-1.el7.src.rpm
 # cd /root/rpmbuild/SPECS
-# rpmbuild -bb mysql.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' 2>&1 | tee build.log
+# rpmbuild -bb mysql.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' --define='runselftest 0' 2>&1 | tee build.log
 
 
