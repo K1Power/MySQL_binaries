@@ -18,7 +18,7 @@ Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
     openssl-devel lz4-devel libxml2-devel wget readline-devel \
     libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad \
-    install java-1.8.0-openjdk iotop dstat perf java-1.8.0-openjdk-devel nmon
+    java-1.8.0-openjdk iotop dstat perf java-1.8.0-openjdk-devel nmon
 
 Install devtoolset-7
 # yum install devtoolset-7
