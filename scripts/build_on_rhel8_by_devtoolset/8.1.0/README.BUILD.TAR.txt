@@ -55,6 +55,7 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
   -DWITH_SYSTEMD=1 \
   -DWITH_NUMA=ON 2>&1 | tee config.log
 # make -j32 VERBOSE=1 2>&1 | tee build.log
+# sed -i '90,$d' man/cmake_install.cmake
 # make install
 
 # cd /opt/mysql
