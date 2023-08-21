@@ -17,8 +17,8 @@ ppc64le
 Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
        openssl-devel lz4-devel libxml2-devel wget readline-devel \
-       libevent libevent-devel jemalloc-devel libaio-devel git bison cmake cmake3 \
-       libtirpc libtirpc-devel numad libzstd libzstd-devel libedit-devel libicu libicu-devel \
+       libevent libevent-devel jemalloc-devel libaio-devel git bison cmake \
+       libtirpc libtirpc-devel numad rpcgen libzstd libzstd-devel libedit-devel libicu libicu-devel \
        protobuf protobuf-devel
 
 Install devtoolset-9
@@ -32,7 +32,7 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 # tar zxvf mysql-boost-8.0.21.tar.gz 
 # cd mysql-8.0.21
 # mkdir build;cd build;
-# cmake3 -LHA .. \
+# cmake -LHA .. \
   -DWITH_BOOST=../boost/boost_1_72_0 \
   -DBUILD_CONFIG=mysql_release \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -59,4 +59,4 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 # make install
 
 # cd /opt/mysql
-# tar zcf mysql-community-8.0.21-1.el7.ppc64le.bin.tar.gz ./8.0.21
+# tar zcf mysql-community-8.0.21-1.el8.ppc64le.bin.tar.gz ./8.0.21

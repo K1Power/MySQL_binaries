@@ -17,8 +17,8 @@ ppc64le
 Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
        openssl-devel lz4-devel libxml2-devel wget readline-devel \
-       libevent libevent-devel jemalloc-devel libaio-devel git bison cmake cmake3 \
-       libtirpc libtirpc-devel numad libzstd libzstd-devel libedit-devel libicu libicu-devel \
+       libevent libevent-devel jemalloc-devel libaio-devel git bison cmake \
+       libtirpc libtirpc-devel numad rpcgen libzstd libzstd-devel libedit-devel libicu libicu-devel \
        protobuf protobuf-devel
 
 Install devtoolset-9
@@ -51,7 +51,7 @@ CMake Error at man/cmake_install.cmake:86 (file):
 # mkdir build;cd build;
 # sed -i 's/ut0new/#ut0new/g' ../unittest/gunit/innodb/CMakeLists.txt
 # sed -i '85,$d' man/cmake_install.cmake
-# cmake3 -LHA .. \
+# cmake -LHA .. \
   -DWITH_BOOST=../boost/boost_1_73_0 \
   -DBUILD_CONFIG=mysql_release \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -77,4 +77,4 @@ CMake Error at man/cmake_install.cmake:86 (file):
 # make install
 
 # cd /opt/mysql
-# tar zcf mysql-community-8.0.26-1.el7.ppc64le.bin.tar.gz ./8.0.26
+# tar zcf mysql-community-8.0.26-1.el8.ppc64le.bin.tar.gz ./8.0.26

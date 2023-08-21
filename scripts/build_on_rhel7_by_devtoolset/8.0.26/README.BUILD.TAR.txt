@@ -50,7 +50,6 @@ CMake Error at man/cmake_install.cmake:86 (file):
 # cd mysql-8.0.26
 # mkdir build;cd build;
 # sed -i 's/ut0new/#ut0new/g' ../unittest/gunit/innodb/CMakeLists.txt
-# sed -i '85,$d' man/cmake_install.cmake
 # cmake3 -LHA .. \
   -DWITH_BOOST=../boost/boost_1_73_0 \
   -DBUILD_CONFIG=mysql_release \

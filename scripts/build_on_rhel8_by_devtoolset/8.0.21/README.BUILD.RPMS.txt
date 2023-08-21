@@ -18,7 +18,7 @@ Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
        openssl-devel lz4-devel libxml2-devel wget readline-devel ncurses-devel pkgconfig \
        libevent libevent-devel jemalloc-devel libaio-devel git bison doxygen cmake cmake3 \
-       libtirpc libtirpc-devel numad libzstd libzstd-devel libedit-devel libicu libicu-devel \
+       libtirpc libtirpc-devel numad rpcgen libzstd libzstd-devel libedit-devel libicu libicu-devel \
        protobuf protobuf-devel rpm-build time perl-JSON perl-Env 
 
 Install devtoolset-9

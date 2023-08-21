@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-9.
+Build on K1 Power9 Linux, CentOS 7.9 (Kernel 4.18.0-193.28.1.el7.ppc64le) with devtoolset-9.
 
 ### 1. About Build ENV #########################################################################################
 
@@ -7,7 +7,7 @@ Architecture:          ppc64le
 Model name:            POWER9 (architected), altivec supported
 
 # uname -r
-4.18.0-305.el8.ppc64le
+4.18.0-193.28.1.el7.ppc64le
 
 # uname -m
 ppc64le
@@ -17,19 +17,19 @@ ppc64le
 Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
     openssl-devel lz4-devel libxml2-devel wget readline-devel \
-    libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad rpcgen \
+    libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad \
     install java-1.8.0-openjdk iotop dstat perf java-1.8.0-openjdk-devel nmon
 
-Install devtoolset-7
-# yum install devtoolset-7
-source /opt/rh/devtoolset-7/enable
+Install devtoolset-9
+# yum install devtoolset-9
+source /opt/rh/devtoolset-9/enable
 # type gcc
-gcc is /opt/rh/devtoolset-7/root/usr/bin/gcc
+gcc is /opt/rh/devtoolset-9/root/usr/bin/gcc
 # gcc --version 
-gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
+gcc (GCC) 9.3.1 20200408 (Red Hat 9.3.1-2)
 
-# tar zxvf mysql-boost-5.7.28.tar.gz 
-# cd mysql-5.7.28
+# tar zxvf mysql-boost-5.7.43.tar.gz 
+# cd mysql-5.7.43
 # mkdir build;cd build;
 # cmake .. \
   -DBUILD_CONFIG=mysql_release \
@@ -38,7 +38,7 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
   -DCMAKE_C_FLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
   -DCMAKE_CXX_COMPILER=`which g++` \
   -DCMAKE_CXX_FLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
-  -DCMAKE_INSTALL_PREFIX=/opt/mysql/5.7.28 \
+  -DCMAKE_INSTALL_PREFIX=/opt/mysql/5.7.43 \
   -DCMAKE_LINKER=`which gcc` \
   -DCMAKE_AR=`which gcc-ar` \
   -DCMAKE_NM=`which gcc-nm` \
@@ -48,8 +48,8 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
   -DWITH_NUMA=ON \
     2>&1 | tee config.log    
 
-# make -j 32 && make install 
+# make -j 32 && make install
 
 
 # cd /opt/mysql
-# tar zcf mysql-community-5.7.28-1.el8.ppc64le.bin.tar.gz ./5.7.28
+# tar zcf mysql-community-5.7.43-1.el7.ppc64le.bin.tar.gz ./5.7.43

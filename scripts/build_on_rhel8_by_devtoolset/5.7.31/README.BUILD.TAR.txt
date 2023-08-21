@@ -17,8 +17,8 @@ ppc64le
 Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
     openssl-devel lz4-devel libxml2-devel wget readline-devel \
-    libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad \
-    install java-1.8.0-openjdk iotop dstat perf java-1.8.0-openjdk-devel nmon
+    libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad rpcgen \
+    java-1.8.0-openjdk iotop dstat perf java-1.8.0-openjdk-devel nmon
 
 Install devtoolset-7
 # yum install devtoolset-7
@@ -52,4 +52,4 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 
 
 # cd /opt/mysql
-# tar zcf mysql-community-5.7.31-1.el7.ppc64le.bin.tar.gz ./5.7.31
+# tar zcf mysql-community-5.7.31-1.el8.ppc64le.bin.tar.gz ./5.7.31
