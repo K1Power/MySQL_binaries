@@ -30,15 +30,15 @@ gcc is /opt/rh/devtoolset-9/root/usr/bin/gcc
 gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 
 # ## Default %{optflags} is not optimized.
-# rpm -Uvh mysql-community-8.0.21-1.el7.src.rpm
+# rpm -Uvh mysql-community-8.0.26-1.el7.src.rpm
 # ## Some modules like 'mysys/my_error.cc' will raise such error: cc1plus: all warnings being treated as errors,
 # ## when compile with '-Werror', so use '-Wall' to show all errors only instead of '-Werror'
 # cd /root/rpmbuild/SOURCES
-# tar zxf mysql-8.0.21.tar.gz
-# sed -i 's/-Werror/-Wall/g' mysql-8.0.21/cmake/maintainer.cmake
-# gzip -d mysql-8.0.21.tar.gz
-# tar uvf mysql-8.0.21.tar mysql-8.0.21/cmake/maintainer.cmake
-# gzip mysql-8.0.21.tar
+# tar zxf mysql-8.0.26.tar.gz
+# sed -i 's/-Werror/-Wall/g' mysql-8.0.26/cmake/maintainer.cmake
+# gzip -d mysql-8.0.26.tar.gz
+# tar uvf mysql-8.0.26.tar mysql-8.0.26/cmake/maintainer.cmake
+# gzip mysql-8.0.26.tar
 # ##
 # cd /root/rpmbuild/SPECS
 # rpmbuild -vv -bb mysql.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' 2>&1 | tee build.log
