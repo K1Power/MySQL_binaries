@@ -21,38 +21,41 @@ Install dependencies
        libtirpc libtirpc-devel numad rpcgen libzstd libzstd-devel libedit-devel libicu libicu-devel \
        protobuf protobuf-devel
 
-Install devtoolset-8
-# yum install devtoolset-8
-source /opt/rh/devtoolset-8/enable
+Install devtoolset-9
+# yum install devtoolset-9
+source /opt/rh/devtoolset-9/enable
 # type gcc
-gcc is /opt/rh/devtoolset-8/root/usr/bin/gcc
+gcc is /opt/rh/devtoolset-9/root/usr/bin/gcc
 # gcc --version 
-gcc (GCC) 8.3.1 20190311 (Red Hat 8.3.1-3)
+gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 
-# tar zxvf mysql-boost-8.0.18.tar.gz 
-# cd mysql-8.0.18
+
+# tar zxvf mysql-boost-8.1.0.tar.gz 
+# cd mysql-8.1.0
 # mkdir build;cd build;
 # cmake -LHA .. \
-  -DWITH_BOOST=../boost/boost_1_70_0 \
+  -DWITH_BOOST=../boost/boost_1_77_0 \
   -DBUILD_CONFIG=mysql_release \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCMAKE_C_COMPILER=`which gcc` \
-  -DCMAKE_C_FLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large -Wall" \
+  -DCMAKE_C_FLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
   -DCMAKE_CXX_COMPILER=`which g++` \
-  -DCMAKE_CXX_FLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large -Wall" \
-  -DCMAKE_INSTALL_PREFIX=/opt/mysql/8.0.18 \
+  -DCMAKE_CXX_FLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
+  -DCMAKE_INSTALL_PREFIX=/opt/mysql/8.1.0 \
   -DCMAKE_LINKER=`which gcc` \
   -DCMAKE_AR=`which gcc-ar` \
   -DCMAKE_NM=`which gcc-nm` \
   -DCMAKE_RANLIB=`which gcc-ranlib` \
   -DWITH_INNODB_MEMCACHED=1 \
   -DWITH_SSL=system \
-  -DWITH_ZLIB=system \
+  -DWITH_ZLIB=bundled \
   -DWITH_JEMALLOC=ON \
-  -DJEMALLOC_LIBRARY=/usr/lib64/libjemalloc.so.1 \
+  -DUSE_LD_LLD=0 \
+  -DWITH_NDBCLUSTER=1 \
+  -DWITH_SYSTEMD=1 \
   -DWITH_NUMA=ON 2>&1 | tee config.log
 # make -j32 VERBOSE=1 2>&1 | tee build.log
 # make install
 
 # cd /opt/mysql
-# tar zcf mysql-community-8.0.18-1.el8.ppc64le.bin.tar.gz ./8.0.18
+# tar zcf mysql-community-8.1.0-1.el8.ppc64le.bin.tar.gz ./8.1.0

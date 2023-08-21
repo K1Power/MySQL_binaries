@@ -18,7 +18,7 @@ Install dependencies
 # yum -y install zlib-devel bzip2-devel numactl-devel \
     openssl-devel lz4-devel libxml2-devel wget readline-devel \
     libevent-devel jemalloc-devel libaio-devel git bison cmake libtirpc-devel numad rpcgen \
-    install java-1.8.0-openjdk iotop dstat perf java-1.8.0-openjdk-devel nmon
+    java-1.8.0-openjdk iotop dstat perf java-1.8.0-openjdk-devel nmon
 
 Install devtoolset-7
 # yum install devtoolset-7
@@ -28,8 +28,8 @@ gcc is /opt/rh/devtoolset-7/root/usr/bin/gcc
 # gcc --version 
 gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 
-# tar zxvf mysql-boost-5.7.28.tar.gz 
-# cd mysql-5.7.28
+# tar zxvf mysql-boost-5.7.43.tar.gz 
+# cd mysql-5.7.43
 # mkdir build;cd build;
 # cmake .. \
   -DBUILD_CONFIG=mysql_release \
@@ -38,7 +38,7 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
   -DCMAKE_C_FLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
   -DCMAKE_CXX_COMPILER=`which g++` \
   -DCMAKE_CXX_FLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
-  -DCMAKE_INSTALL_PREFIX=/opt/mysql/5.7.28 \
+  -DCMAKE_INSTALL_PREFIX=/opt/mysql/5.7.43 \
   -DCMAKE_LINKER=`which gcc` \
   -DCMAKE_AR=`which gcc-ar` \
   -DCMAKE_NM=`which gcc-nm` \
@@ -48,8 +48,8 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
   -DWITH_NUMA=ON \
     2>&1 | tee config.log    
 
-# make -j 32 && make install 
+# make -j 32 && make install
 
 
 # cd /opt/mysql
-# tar zcf mysql-community-5.7.28-1.el8.ppc64le.bin.tar.gz ./5.7.28
+# tar zcf mysql-community-5.7.43-1.el8.ppc64le.bin.tar.gz ./5.7.43
