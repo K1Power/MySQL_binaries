@@ -27,7 +27,7 @@ source /opt/rh/devtoolset-9/enable
 # type gcc
 gcc is /opt/rh/devtoolset-9/root/usr/bin/gcc
 # gcc --version 
-gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
+gcc (GCC) 9.1.1 20190605 (Red Hat 9.1.1-2)
 
 # tar zxvf mysql-boost-8.1.0.tar.gz 
 # cd mysql-8.1.0
